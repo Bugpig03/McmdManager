@@ -1,0 +1,83 @@
+# made by : bugpig_
+# This file allows you to configure your MCmd Manager application to meet your needs.
+# Please read the comments carefully to avoid breaking the YAML config file.
+
+# --------------------------------------------------------------------------------------- #
+# -------- CHANGES YOU NEED TO MAKE IN YOURS .BAT FILE TO WORK WITH MCMD MANAGER -------- #
+# --------------------------------------------------------------------------------------- #
+# You need to add some lines to your .bat file to use this application.
+# The title should be the same as the server name. use command "title yourservername"
+# Remove the command line "stop"
+
+# ---------------------------------------- #
+# -------- Configuration settings -------- #
+# ---------------------------------------- #
+
+# Enter the .bat name same as in your minecraft server folders. you have to get the same for all servers and bungee
+server_bat_name : start.bat
+
+#server name display in the app. All servers without a name are invisible in the application.
+# Carefully, server_name0 must be the bungee. Ignore this line if you don't have bungee.
+server_name0 : Bungee
+server_name1 : Hub
+server_name2 : Bedwars
+server_name3 : 
+server_name4 : 
+server_name5 : 
+server_name6 : 
+server_name7 : 
+server_name8 : 
+server_name9 : 
+server_name10 : 
+server_name11 : 
+server_name12 : 
+
+# Path parameters (link your minecraft server folder path. warning server 0 must be the bungee if you don't use bungee don't use server 0 and start at server1)
+# all path server are not display in the application so don't worry (max = 12 you can go over this limit actualy)
+# For exemple path_sever_exemple : C:/Minecraft/Hypixel/Bedwars
+# Carefully, path_server0 must be the bungee. Ignore this line if you don't have bungee.
+path_server0 : D:/Minecraft/Hypixel/Bungee
+path_server1 : D:/Minecraft/Hypixel/Hub
+path_server2 : D:/Minecraft/Hypixel/Bedwars
+path_server3 : 
+path_server4 : 
+path_server5 : 
+path_server6 : 
+path_server7 : 
+path_server8 :
+path_server9 :
+path_server10 :
+path_server11 :
+path_server12 :
+
+
+# ------------------------------------------ #
+# -------- Personalization settings -------- #
+# ------------------------------------------ #
+
+# -------- GLOBAL --------
+# Windows app name
+app_name : MCmd Manager
+
+# -------- FIRST TAB --------
+ # First tab name
+tab0_name : infos
+
+# Main Title on fist tab
+pa_main_title : MCmd Manager
+
+# Main Description on first tab
+pa_description : MCmd Manager is a simple application to manage multiple Minecraft CMD servers and Bungee servers.
+
+# -------- SECOND TAB --------
+# Second tab name
+tab1_name : manager
+
+# Title on second tab 
+pa_title_zbreath_tab : Server Manager
+
+
+
+
+
+
