@@ -15,6 +15,8 @@
 
 # Enter the .bat name same as in your minecraft server folders. you have to get the same for all servers and bungee
 server_bat_name : start.bat
+# Change this parameter with the language of your operating system.
+name_when_bat_is_selected : Sélection
 
 #server name display in the app. All servers without a name are invisible in the application.
 # Carefully, server_name0 must be the bungee. Ignore this line if you don't have bungee.

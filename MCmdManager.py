@@ -83,9 +83,9 @@ window.show()
 # -------- FUNCTIONS -------- #
 
 def is_cmd_running(server_name):
-    hwnd = win32gui.FindWindow(None, server_name)
+    hwnd = win32gui.FindWindow(None, "server_" + server_name)
     if hwnd == 0:
-        hwnd = win32gui.FindWindow(None, "Sélection server_" + server_name)
+        hwnd = win32gui.FindWindow(None, config_data.get("name_when_bat_is_selected") + " server_" + server_name)
         if hwnd == 0:
             return False
         else:
@@ -94,7 +94,7 @@ def is_cmd_running(server_name):
         return True
     
 def f_launch_server(server_name, server_index):
-    if is_cmd_running("server_"+server_name):
+    if is_cmd_running(server_name):
         print("The CMD console is running.")
     else:
         if config_data.get(f"path_server{server_index}"):
@@ -111,7 +111,7 @@ def f_stop_bungee_server(server_name, server_index):
     # Trouver la fenêtre de commande avec le titre spécifié
     hwnd = win32gui.FindWindow(None, "server_" + server_name)
     if hwnd == 0:
-        hwnd = win32gui.FindWindow(None, "Sélection server_" + server_name)
+        hwnd = win32gui.FindWindow(None, config_data.get("name_when_bat_is_selected") + " server_" + server_name)
     if hwnd:
         # Envoyer le message WM_CLOSE pour fermer la fenêtre
         win32api.PostMessage(hwnd, win32con.WM_CLOSE, 0, 0)
@@ -121,10 +121,10 @@ def f_stop_bungee_server(server_name, server_index):
 
 #Lance un serveur avec la commande stop via son nom
 def f_stop_server(server_name, server_index):
-    if is_cmd_running("server_"+server_name):
+    if is_cmd_running(server_name):
         hwnd = win32gui.FindWindow("ConsoleWindowClass", "server_" +server_name)
         if hwnd == 0:
-            hwnd = win32gui.FindWindow(None, "Sélection server_" + server_name)
+            hwnd = win32gui.FindWindow(None, config_data.get("name_when_bat_is_selected") + " server_" + server_name)
         win32gui.ShowWindow(hwnd, win32con.SW_SHOW)
         win32gui.SetForegroundWindow(hwnd)
         win32api.keybd_event(0x53, 0, 0, 0) # "s"
@@ -141,7 +141,7 @@ def refresh_server_states():
     for i in range(13):
         if config_data.get(f"server_name{i}"):
             temp_label_state_reference = window.findChild(QtWidgets.QLabel, f"label_state_server{i}")
-            if is_cmd_running("server_" + config_data.get(f"server_name{i}")):
+            if is_cmd_running(config_data.get(f"server_name{i}")):
                 temp_label_state_reference.setText("ON")
                 temp_label_state_reference.setStyleSheet("color: green;")
             else:
